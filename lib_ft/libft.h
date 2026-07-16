@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 22:21:59 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/16 12:26:35 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/16 13:11:29 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,21 @@
 # include <unistd.h>
 # include <stddef.h>
 
-typedef struct s_list
+typedef struct	s_node
 {
-	void			*content;
-	struct s_list	*next;
+	int				value;
+	int				index;
+	struct s_node	*next;
+} t_node;
 
-}	t_list;
+typedef struct	s_ps
+{
+	t_node	*stack_a;
+	t_node	*stack_b;
+	int	op_sa;
+	int	total_ops;
+} t_ps;
+
 //Classificação e Conversão de Caracteres
 int			ft_isdigit(int c);
 //Manipulação e Busca em Memória
@@ -34,15 +43,7 @@ char		*ft_strchr(const char *s, int c);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t		ft_strlcpy(char *dst, const char *src, size_t size);
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
-int			ft_atol(const char *nptr);
-//Listas encadeadas
-t_list		*ft_lstnew(void *content);
-void		ft_lstadd_front(t_list **lst, t_list *new);
-int			ft_lstsize(t_list *lst);
-t_list		*ft_lstlast(t_list *lst);
-void		ft_lstadd_back(t_list **lst, t_list *new);
-void		ft_lstdelone(t_list *lst, void (*del)(void*));
-void		ft_lstclear(t_list **lst, void (*del)(void *));
+long long			ft_atol(const char *nptr);
 //Manipulação Avançada de Strings
 char		*ft_substr(const char *s, unsigned int start, size_t len);
 char		*ft_strjoin(const char *s1, const char *s2);
@@ -54,4 +55,6 @@ void		ft_putnbr_fd(int n, int fd);
 //Alocação Dinâmica Base
 void		*ft_calloc(size_t nmemb, size_t size);
 char		*ft_strdup(const char *s);
+// Limpeza de matriz
+void	free_vector(char **vector);
 #endif
