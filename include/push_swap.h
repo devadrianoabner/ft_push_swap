@@ -6,12 +6,14 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 13:08:00 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/16 13:09:48 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/16 19:34:49 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# include <stdio.h> // retirar depois
 
 typedef struct	s_node
 {
@@ -19,6 +21,12 @@ typedef struct	s_node
 	int				index;
 	struct s_node	*next;
 } t_node;
+
+typedef struct	s_flag
+{
+	char	*name;
+	int		code;
+} t_flag;
 
 typedef struct	s_ps
 {
