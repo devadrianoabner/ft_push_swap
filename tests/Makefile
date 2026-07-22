@@ -5,20 +5,26 @@
 #                                                     +:+ +:+         +:+      #
 #    By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/07/16 12:37:14 by adrianda          #+#    #+#              #
-#    Updated: 2026/07/22 18:20:35 by adrianda         ###   ########.fr        #
+#    Created: 2026/07/22 17:47:31 by adrianda          #+#    #+#              #
+#    Updated: 2026/07/22 18:21:18 by adrianda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+NAME = test_ps
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Iinclude
+CFLAGS = -Wall -Wextra -Werror -I../include -I../lib_ft
 
-LIB_DIR = lib_ft
+LIB_DIR = ../lib_ft
 LIBFT = $(LIB_DIR)/libft.a
 
-SRCS = src/main.c
+# Todo .c de src/, menos main.c (senão colide com o main() daqui)
+#Uso de wildcard para facilitar a compilação, visto que esse arquivo não será entregue
+SRC_FILES = $(filter-out ../src/main.c, $(wildcard ../src/*/*.c))
 
+# Arquivos do diretório de testes
+TEST_FILES = main_test.c debug/print_stack.c dummy/build_dummy_stack.c
+
+SRCS = $(SRC_FILES) $(TEST_FILES)
 OBJS = $(SRCS:.c=.o)
 
 all: $(LIBFT) $(NAME)
@@ -31,13 +37,12 @@ $(NAME): $(OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
 	rm -f $(OBJS)
-	make clean -C $(LIB_DIR)
 
 fclean: clean
 	rm -f $(NAME)
-	make fclean -C $(LIB_DIR)
 
 re: fclean all
 
