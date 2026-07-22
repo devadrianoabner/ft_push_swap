@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/16 12:38:48 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/22 18:33:04 by adrianda         ###   ########.fr       */
+/*   Created: 2026/07/22 18:09:57 by adrianda          #+#    #+#             */
+/*   Updated: 2026/07/22 18:34:27 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	print_stack(t_node *stack_a)
 {
-	if (argc == 0)
-		return (0);
-	printf("%s", argv[1]);
-	return (0);
+	if (!stack_a)
+	{
+		printf("Nenhuma pilha foi formada");
+		return ;
+	}
+	while (stack_a != NULL)
+	{
+		printf("Indice: %d | Valor %d\n", stack_a->index, stack_a->value);
+		stack_a = stack_a->next;
+	}
 }

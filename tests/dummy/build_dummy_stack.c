@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   build_dummy_stack.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/16 12:38:48 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/22 18:33:04 by adrianda         ###   ########.fr       */
+/*   Created: 2026/07/22 18:10:01 by adrianda          #+#    #+#             */
+/*   Updated: 2026/07/22 18:35:12 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	main(int argc, char **argv)
+void	none(void)
 {
-	if (argc == 0)
-		return (0);
-	printf("%s", argv[1]);
-	return (0);
+	return ;
 }
