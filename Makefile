@@ -6,7 +6,7 @@
 #    By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/16 12:37:14 by adrianda          #+#    #+#              #
-#    Updated: 2026/07/23 14:02:05 by adrianda         ###   ########.fr        #
+#    Updated: 2026/07/23 17:42:31 by adrianda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,11 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(LIBFT) $(NAME)
 
-$(LIBFT):
+
+$(LIBFT): f
 	make -C $(LIB_DIR)
+
+f:
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
