@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/22 18:10:01 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/23 14:24:08 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/23 16:07:50 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,9 @@ static void	insert_node(t_push_swap *push_swap, t_node *new)
 	{
 		push_swap->stack_a = new;
 		push_swap->tail_a = new;
-		new->index = 0;
 		return ;
 	}
 	push_swap->tail_a->next = new;
-	new->index = push_swap->tail_a->index + 1;
 	push_swap->tail_a = new;
 }
 

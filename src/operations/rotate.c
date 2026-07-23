@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stack.c                                      :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/22 18:09:57 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/23 16:08:26 by adrianda         ###   ########.fr       */
+/*   Created: 2026/07/23 15:08:55 by adrianda          #+#    #+#             */
+/*   Updated: 2026/07/23 16:19:03 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_stack(t_node *stack_a)
+void	ra(t_push_swap *push_swap)
 {
-	if (!stack_a)
-	{
-		printf("Nenhuma pilha foi formada");
-		return ;
-	}
-	while (stack_a != NULL)
-	{
-		printf("Valor %d\n", stack_a->value);
-		stack_a = stack_a->next;
-	}
+	(void)push_swap;
+}
+
+void	rb(t_push_swap *push_swap)
+{
+	(void)push_swap;
+}
+
+void	rr(t_push_swap *push_swap)
+{
+	(void)push_swap;
 }
