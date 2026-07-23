@@ -6,7 +6,7 @@
 #    By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/16 12:31:50 by adrianda          #+#    #+#              #
-#    Updated: 2026/07/16 16:18:19 by adrianda         ###   ########.fr        #
+#    Updated: 2026/07/23 17:56:09 by adrianda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS = ft_atol.c ft_bzero.c ft_calloc.c ft_isdigit.c \
        ft_memset.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
        ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c \
        ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c \
-       ft_strncmp.c ft_substr.c 
+       ft_strncmp.c ft_substr.c free_vector.c
 OBJS = $(SRCS:.c=.o)
 
 all : $(NAME)
