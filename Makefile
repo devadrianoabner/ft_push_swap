@@ -6,13 +6,13 @@
 #    By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/16 12:37:14 by adrianda          #+#    #+#              #
-#    Updated: 2026/07/22 18:20:35 by adrianda         ###   ########.fr        #
+#    Updated: 2026/07/23 14:02:05 by adrianda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Iinclude
+CFLAGS = -Wall -Wextra -Werror -Iinclude -Ilib_ft
 
 LIB_DIR = lib_ft
 LIBFT = $(LIB_DIR)/libft.a
