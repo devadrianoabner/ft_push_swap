@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 13:08:00 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/22 18:32:48 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/23 14:23:09 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,16 @@ typedef struct s_flag
 typedef struct s_push_swap
 {
 	t_node	*stack_a;
+	t_node	*tail_a;
 	t_node	*stack_b;
 	int		op_sa;
 	int		total_ops;
 }	t_push_swap;
 
-int	is_valid(char *str);
-int	has_duplicate(t_push_swap *push_swap, int temp_num);
-
+int				is_valid(char *str);
+int				has_duplicate(t_push_swap *push_swap, int temp_num);
+// temporário, só para ambiente de testes:
+t_push_swap		*build_dummy_stack(int *values, int n);
+void			print_stack(t_node *stack_a);
+void			free_stack(t_node *stack);
 #endif
