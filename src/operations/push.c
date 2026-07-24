@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 15:08:24 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/23 20:59:49 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/23 21:22:18 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,24 @@
 
 void	pa(t_push_swap *push_swap)
 {
-	// armazenar topo de stack_b em um temp
-	// stack_b apontará para o próximo nó
-	// já a stack_a vai apontar para o temp
-	// o temp vai apontar para o topo da stack_a
-	t_node *top_a;
-	t_node *top_b;
-	t_node *temp;
+	t_node	*moved;
 
-	top_a = push_swap->stack_a;
-	top_b = push_swap->stack_b;	
-	temp = top_b->next;
-	top_b = temp->next;
-	top_b->next = top_a->next;
-	top_a = top_b;
+	if (!push_swap->stack_a)
+		return ;
+	moved = push_swap->stack_b;
+	push_swap->stack_b = push_swap->stack_b->next;
+	moved->next = push_swap->stack_a;
+	push_swap->stack_a = moved;
 }
 
 void	pb(t_push_swap *push_swap)
 {
-	(void)push_swap;
+	t_node	*moved;
+
+	if (!push_swap->stack_b)
+		return ;
+	moved = push_swap->stack_a;
+	push_swap->stack_a = push_swap->stack_a->next;
+	moved->next = push_swap->stack_b;
+	push_swap->stack_b = moved;
 }
