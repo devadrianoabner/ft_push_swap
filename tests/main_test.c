@@ -6,25 +6,61 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/22 17:59:37 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/23 14:05:02 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/24 16:49:25 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(void)
+static void	print_both(t_push_swap *push_swap)
 {
-	int			values[5];
+	printf("stack_a:\n");
+	print_stack(push_swap->stack_a);
+	printf("stack_b:\n");
+	print_stack(push_swap->stack_b);
+}
+
+static void	test_one(char *op_name, void (*op)(t_push_swap *))
+{
+	int			values_a[5];
+	int			values_b[3];
 	t_push_swap	*push_swap;
 
-	values[0] = 5;
-	values[1] = 2;
-	values[2] = 9;
-	values[3] = 1;
-	values[4] = 6;
-	push_swap = build_dummy_stack(values, 5);
-	print_stack(push_swap->stack_a);
+	values_a[0] = 1;
+	values_a[1] = 2;
+	values_a[2] = 3;
+	values_a[3] = 4;
+	values_a[4] = 5;
+	values_b[0] = 10;
+	values_b[1] = 20;
+	values_b[2] = 30;
+	push_swap = build_dummy_stack(values_a, 5, values_b, 3);
+	printf("=== %s | ANTES ===\n", op_name);
+	print_both(push_swap);
+	op(push_swap);
+	printf("=== %s | DEPOIS ===\n", op_name);
+	print_both(push_swap);
+	printf("\n");
 	free_stack(push_swap->stack_a);
+	free_stack(push_swap->stack_b);
 	free(push_swap);
+}
+
+int	main(void)
+{
+	test_one("sa", sa);
 	return (0);
 }
+
+/*
+	test_one("sb", sb);
+	test_one("ss", ss);
+	test_one("pa", pa);
+	test_one("pb", pb);
+	test_one("ra", ra);
+	test_one("rb", rb);
+	test_one("rr", rr);
+	test_one("rra", rra);
+	test_one("rrb", rrb);
+	test_one("rrr", rrr);
+*/

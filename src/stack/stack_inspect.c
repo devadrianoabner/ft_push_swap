@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 18:53:27 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/23 19:37:28 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/24 18:24:59 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	is_empty(t_node *stack)
 	return (stack == NULL);
 }
 
-t_node *second_last(t_node *stack)
+t_node	*second_last(t_node *stack)
 {
 	if (!stack || stack->next == NULL)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 13:08:00 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/24 15:12:01 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/24 18:23:08 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,10 @@ void			ss(t_push_swap *push_swap);
 //stack
 int				stack_size(t_node *stack);
 int				is_empty(t_node *stack);
-t_node 			*second_last(t_node *stack);
+t_node			*second_last(t_node *stack);
 // temporário, só para ambiente de testes
-t_push_swap		*build_dummy_stack(int *values, int n);
+t_push_swap		*build_dummy_stack(int *values_a, int n_a,
+					int *values_b, int n_b);
 void			print_stack(t_node *stack_a);
 void			free_stack(t_node *stack);
 #endif
