@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 15:08:55 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/24 15:08:09 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/24 18:23:58 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ra(t_push_swap *push_swap)
 {
-	t_node *moved;
+	t_node	*moved;
 
 	if (!push_swap->stack_a || !push_swap->stack_a->next)
 		return ;
@@ -27,7 +27,7 @@ void	ra(t_push_swap *push_swap)
 
 void	rb(t_push_swap *push_swap)
 {
-	t_node *moved;
+	t_node	*moved;
 
 	if (!push_swap->stack_b || !push_swap->stack_b->next)
 		return ;

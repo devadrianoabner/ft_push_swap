@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/22 18:10:01 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/23 16:07:50 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/24 16:44:48 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,31 +37,38 @@ static t_node	*create_node(int value)
 	return (new);
 }
 
-static void	insert_node(t_push_swap *push_swap, t_node *new)
+static void	insert_node(t_node **stack, t_node **tail, t_node *new)
 {
-	if (!push_swap->stack_a)
+	if (!*stack)
 	{
-		push_swap->stack_a = new;
-		push_swap->tail_a = new;
+		*stack = new;
+		*tail = new;
 		return ;
 	}
-	push_swap->tail_a->next = new;
-	push_swap->tail_a = new;
+	(*tail)->next = new;
+	*tail = new;
 }
 
-t_push_swap	*build_dummy_stack(int *values, int n)
+static void	fill_stack(t_node **stack, t_node **tail, int *values, int n)
+{
+	int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		insert_node(stack, tail, create_node(values[i]));
+		i++;
+	}
+}
+
+t_push_swap	*build_dummy_stack(int *values_a, int n_a, int *values_b, int n_b)
 {
 	t_push_swap	*push_swap;
-	int			i;
 
 	push_swap = ft_calloc(sizeof(t_push_swap), 1);
 	if (!push_swap)
 		return (NULL);
-	i = 0;
-	while (i < n)
-	{
-		insert_node(push_swap, create_node(values[i]));
-		i++;
-	}
+	fill_stack(&push_swap->stack_a, &push_swap->tail_a, values_a, n_a);
+	fill_stack(&push_swap->stack_b, &push_swap->tail_b, values_b, n_b);
 	return (push_swap);
 }
