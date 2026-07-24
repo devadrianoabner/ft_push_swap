@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <stdio.h> // retirar depois
+# include "libft.h"
 
 typedef struct	s_node
 {
@@ -35,5 +36,10 @@ typedef struct	s_ps
 	int	op_sa;
 	int	total_ops;
 } t_ps;
+
+int	is_valid(char *str);
+int	has_duplicate(t_ps *push_swap, int temp_num);
+int	is_flag(char *str);
+int	is_int_range(char *str);
 
 #endif
