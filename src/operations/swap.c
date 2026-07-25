@@ -6,44 +6,38 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 15:08:59 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/24 18:24:29 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/25 15:20:14 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_push_swap *push_swap)
+static void	swap_values(t_node *stack)
 {
 	int		temp;
-	t_node	*top_one;
-	t_node	*top_two;
 
-	if (!push_swap->stack_a || !push_swap->stack_a->next)
+	if (!stack || !stack->next)
 		return ;
-	top_one = push_swap->stack_a;
-	top_two = top_one->next;
-	temp = push_swap->stack_a->value;
-	top_one->value = top_two->value;
-	top_two->value = temp;
+	temp = stack->value;
+	stack->value = stack->next->value;
+	stack->next->value = temp;
+}
+
+void	sa(t_push_swap *push_swap)
+{
+	swap_values(push_swap->stack_a);
+	count_op(push_swap, OP_SA);
 }
 
 void	sb(t_push_swap *push_swap)
 {
-	int		temp;
-	t_node	*top_one;
-	t_node	*top_two;
-
-	if (!push_swap->stack_b || !push_swap->stack_b->next)
-		return ;
-	top_one = push_swap->stack_b;
-	top_two = top_one->next;
-	temp = push_swap->stack_b->value;
-	top_one->value = top_two->value;
-	top_two->value = temp;
+	swap_values(push_swap->stack_b);
+	count_op(push_swap, OP_SB);
 }
 
 void	ss(t_push_swap *push_swap)
 {
-	sa(push_swap);
-	sb(push_swap);
+	swap_values(push_swap->stack_a);
+	swap_values(push_swap->stack_b);
+	count_op(push_swap, OP_SS);
 }

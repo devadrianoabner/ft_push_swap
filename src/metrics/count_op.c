@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   count_op.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/23 15:08:24 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/25 15:49:52 by adrianda         ###   ########.fr       */
+/*   Created: 2026/07/25 14:06:49 by adrianda          #+#    #+#             */
+/*   Updated: 2026/07/25 14:16:58 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	push_values(t_node **stack)
+void	count_op(t_push_swap *push_swap, t_op op)
 {
-		t_node	*temp;
-
-	if (!*stack)
-		return ;
-	temp = *stack;
-	*stack = (*stack)->next;
-	temp->next = *stack;
-	*stack = temp;
-}
-
-void	pa(t_push_swap *push_swap)
-{
-	push_values(&push_swap->stack_a);
-	count_op(push_swap, OP_PA);
-}
-
-void	pb(t_push_swap *push_swap)
-{
-	push_values(&push_swap->stack_b);
-	count_op(push_swap, OP_PB);
+	push_swap->op_counts[op]++;
+	push_swap->total_ops++;
 }

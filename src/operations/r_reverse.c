@@ -6,44 +6,41 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 15:08:51 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/24 18:23:42 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/25 15:45:24 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(t_push_swap *push_swap)
+static void	reverse_values(t_node **stack, t_node **tail)
 {
 	t_node	*temp;
 	t_node	*penultimate;
 
-	if (!push_swap->stack_a || !push_swap->stack_a->next)
+	if (!*stack || !(*stack)->next)
 		return ;
-	temp = push_swap->tail_a;
-	penultimate = second_last(push_swap->stack_a);
+	temp = *tail;
+	penultimate = second_last(*stack);
 	penultimate->next = NULL;
-	temp->next = push_swap->stack_a;
-	push_swap->stack_a = temp;
-	push_swap->tail_a = penultimate;
+	temp->next = *stack;
+	*stack = temp;
+	*tail = penultimate;
+}
+void	rra(t_push_swap *push_swap)
+{
+	reverse_values(&push_swap->stack_a, &push_swap->tail_a);
+	count_op(push_swap, OP_RRA);
 }
 
 void	rrb(t_push_swap *push_swap)
 {
-	t_node	*temp;
-	t_node	*penultimate;
-
-	if (!push_swap->stack_b || !push_swap->stack_b->next)
-		return ;
-	temp = push_swap->tail_b;
-	penultimate = second_last(push_swap->stack_b);
-	penultimate->next = NULL;
-	temp->next = push_swap->stack_b;
-	push_swap->stack_b = temp;
-	push_swap->tail_b = penultimate;
+	reverse_values(&push_swap->stack_b, &push_swap->tail_b);
+	count_op(push_swap, OP_RRB);
 }
 
 void	rrr(t_push_swap *push_swap)
 {
-	rra(push_swap);
-	rrb(push_swap);
+	reverse_values(&push_swap->stack_a, &push_swap->tail_a);
+	reverse_values(&push_swap->stack_b, &push_swap->tail_b);
+	count_op(push_swap, OP_RRR);
 }

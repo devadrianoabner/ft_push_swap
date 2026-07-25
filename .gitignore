@@ -8,6 +8,7 @@
 a.out
 *.out
 test
+test_ps
 
 # Ficheiros ocultos de sistema
 .DS_Store
