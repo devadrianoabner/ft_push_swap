@@ -59,6 +59,7 @@ void			ss(t_push_swap *push_swap);
 int				stack_size(t_node *stack);
 int				is_empty(t_node *stack);
 t_node 			*second_last(t_node *stack);
+int				stack_a_add_back(t_push_swap *push_swap, int value);
 // temporário, só para ambiente de testes
 t_push_swap		*build_dummy_stack(int *values, int n);
 void			print_stack(t_node *stack_a);
