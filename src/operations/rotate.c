@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 15:08:55 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/25 15:43:45 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/27 14:46:59 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,27 @@ static void	rotate_values(t_node **stack, t_node **tail)
 }
 void	ra(t_push_swap *push_swap)
 {
+	if (!push_swap->stack_a || !push_swap->stack_a->next)
+		return ;
 	rotate_values(&push_swap->stack_a, &push_swap->tail_a);
 	count_op(push_swap, OP_RA);
 }
 
 void	rb(t_push_swap *push_swap)
 {
+	if (!push_swap->stack_b || !push_swap->stack_b->next)
+		return ;
 	rotate_values(&push_swap->stack_b, &push_swap->tail_b);
 	count_op(push_swap, OP_RB);
 }
 
 void	rr(t_push_swap *push_swap)
 {
-	rotate_values(push_swap->stack_a, push_swap->tail_a);
-	rotate_values(push_swap->stack_b, push_swap->tail_b);
+	if (!push_swap->stack_a || !push_swap->stack_a->next)
+		return ;
+	if (!push_swap->stack_b || !push_swap->stack_b->next)
+		return ;
+	rotate_values(&push_swap->stack_a, &push_swap->tail_a);
+	rotate_values(&push_swap->stack_b, &push_swap->tail_b);
 	count_op(push_swap, OP_RR);
 }

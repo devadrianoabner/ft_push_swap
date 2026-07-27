@@ -6,32 +6,48 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 15:08:24 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/25 15:49:52 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/27 14:31:27 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	push_values(t_node **stack)
+static void	push_values(t_node **src, t_node **dest)
 {
-		t_node	*temp;
+	t_node	*temp;
 
-	if (!*stack)
+	if (!*src)
 		return ;
-	temp = *stack;
-	*stack = (*stack)->next;
-	temp->next = *stack;
-	*stack = temp;
+	temp = *src;
+	*src = (*src)->next;
+	temp->next = *dest;
+	*dest = temp;
+}
+
+static void	tails_checker(t_node *head, t_node **tail)
+{
+	if (!head)
+		*tail = NULL;
+	else if (!head->next)
+		*tail = head;
 }
 
 void	pa(t_push_swap *push_swap)
 {
-	push_values(&push_swap->stack_a);
+	if (!push_swap->stack_b)
+		return ;
+	push_values(&push_swap->stack_b, &push_swap->stack_a);
+	tails_checker(push_swap->stack_b, &push_swap->tail_b);
+	tails_checker(push_swap->stack_a, &push_swap->tail_a);
 	count_op(push_swap, OP_PA);
 }
 
 void	pb(t_push_swap *push_swap)
 {
-	push_values(&push_swap->stack_b);
+	if (!push_swap->stack_a)
+		return ;
+	push_values(&push_swap->stack_a, &push_swap->stack_b);
+	tails_checker(push_swap->stack_a, &push_swap->tail_a);
+	tails_checker(push_swap->stack_b, &push_swap->tail_b);
 	count_op(push_swap, OP_PB);
 }

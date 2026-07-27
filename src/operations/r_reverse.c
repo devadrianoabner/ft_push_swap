@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 15:08:51 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/25 15:45:24 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/27 14:42:11 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,26 @@ static void	reverse_values(t_node **stack, t_node **tail)
 }
 void	rra(t_push_swap *push_swap)
 {
+	if (!push_swap->stack_a || !push_swap->stack_a->next)
+		return ;
 	reverse_values(&push_swap->stack_a, &push_swap->tail_a);
 	count_op(push_swap, OP_RRA);
 }
 
 void	rrb(t_push_swap *push_swap)
 {
+	if (!push_swap->stack_b || !push_swap->stack_b->next)
+		return ;
 	reverse_values(&push_swap->stack_b, &push_swap->tail_b);
 	count_op(push_swap, OP_RRB);
 }
 
 void	rrr(t_push_swap *push_swap)
 {
+	if (!push_swap->stack_a || !push_swap->stack_a->next)
+		return ;
+	if (!push_swap->stack_b || !push_swap->stack_b->next)
+		return ;
 	reverse_values(&push_swap->stack_a, &push_swap->tail_a);
 	reverse_values(&push_swap->stack_b, &push_swap->tail_b);
 	count_op(push_swap, OP_RRR);
