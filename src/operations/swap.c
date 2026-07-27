@@ -6,44 +6,51 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 15:08:59 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/24 18:24:29 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/27 15:10:47 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static void	swap_values(t_node **stack, t_node **tail)
+{
+	t_node	*src;
+	t_node	*dest;
+
+	if (!*stack || !(*stack)->next)
+		return ;
+	src = *stack;
+	dest = (*stack)->next;
+	src->next = dest->next;
+	dest->next = src;
+	*stack = dest;
+	if (!src->next)
+		*tail = src;
+}
+
 void	sa(t_push_swap *push_swap)
 {
-	int		temp;
-	t_node	*top_one;
-	t_node	*top_two;
-
 	if (!push_swap->stack_a || !push_swap->stack_a->next)
 		return ;
-	top_one = push_swap->stack_a;
-	top_two = top_one->next;
-	temp = push_swap->stack_a->value;
-	top_one->value = top_two->value;
-	top_two->value = temp;
+	swap_values(&push_swap->stack_a, &push_swap->tail_a);
+	count_op(push_swap, OP_SA);
 }
 
 void	sb(t_push_swap *push_swap)
 {
-	int		temp;
-	t_node	*top_one;
-	t_node	*top_two;
-
 	if (!push_swap->stack_b || !push_swap->stack_b->next)
 		return ;
-	top_one = push_swap->stack_b;
-	top_two = top_one->next;
-	temp = push_swap->stack_b->value;
-	top_one->value = top_two->value;
-	top_two->value = temp;
+	swap_values(&push_swap->stack_b, &push_swap->tail_b);
+	count_op(push_swap, OP_SB);
 }
 
 void	ss(t_push_swap *push_swap)
 {
-	sa(push_swap);
-	sb(push_swap);
+	if (!push_swap->stack_a || !push_swap->stack_a->next)
+		return ;
+	if (!push_swap->stack_b || !push_swap->stack_b->next)
+		return ;
+	swap_values(&push_swap->stack_a, &push_swap->tail_a);
+	swap_values(&push_swap->stack_b, &push_swap->tail_b);
+	count_op(push_swap, OP_SS);
 }
