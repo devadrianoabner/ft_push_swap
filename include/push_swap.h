@@ -6,7 +6,7 @@
 /*   By: rafcrist <rafcrist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 13:08:00 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/28 16:34:06 by rafcrist         ###   ########.fr       */
+/*   Updated: 2026/07/28 17:54:38 by rafcrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct s_push_swap
 	int		op_counts[OP_TYPES_TOTAL];
 }	t_push_swap;
 
+<<<<<<< HEAD
 int				is_valid(char *str);
 int				has_duplicate(t_push_swap *push_swap, int temp_num);
 // push
@@ -82,4 +83,10 @@ t_push_swap		*build_dummy_stack(int *values_a, int n_a,
 					int *values_b, int n_b);
 void			print_stack(t_node *stack_a);
 void			free_stack(t_node *stack);
+// parser
+int	is_valid(char *str);
+int	has_duplicate(t_ps *push_swap, int temp_num);
+int	is_flag(char *str);
+int	is_int_range(char *str);
+
 #endif
