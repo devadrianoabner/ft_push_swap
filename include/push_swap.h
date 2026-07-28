@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rafcrist <rafcrist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 13:08:00 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/28 15:03:27 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/28 16:26:34 by rafcrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,11 @@ void			rr(t_push_swap *push_swap);
 void			sa(t_push_swap *push_swap);
 void			sb(t_push_swap *push_swap);
 void			ss(t_push_swap *push_swap);
-//stack
+// stack
 int				stack_size(t_node *stack);
 int				is_empty(t_node *stack);
 t_node			*second_last(t_node *stack);
+int				stack_a_add_back(t_push_swap *push_swap, int value);
 // metrics
 void			count_op(t_push_swap *push_swap, t_op op);
 // temporário, só para ambiente de testes
