@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 14:06:49 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/25 14:16:58 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/28 15:07:48 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,4 @@
 void	count_op(t_push_swap *push_swap, t_op op)
 {
 	push_swap->op_counts[op]++;
-	push_swap->total_ops++;
 }

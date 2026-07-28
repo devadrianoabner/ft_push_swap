@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 15:08:59 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/27 15:10:47 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/28 15:14:31 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	sa(t_push_swap *push_swap)
 		return ;
 	swap_values(&push_swap->stack_a, &push_swap->tail_a);
 	count_op(push_swap, OP_SA);
+	count_op(push_swap, OP_TYPES_TOTAL);
 }
 
 void	sb(t_push_swap *push_swap)
@@ -42,6 +43,7 @@ void	sb(t_push_swap *push_swap)
 		return ;
 	swap_values(&push_swap->stack_b, &push_swap->tail_b);
 	count_op(push_swap, OP_SB);
+	count_op(push_swap, OP_TYPES_TOTAL);
 }
 
 void	ss(t_push_swap *push_swap)
@@ -53,4 +55,5 @@ void	ss(t_push_swap *push_swap)
 	swap_values(&push_swap->stack_a, &push_swap->tail_a);
 	swap_values(&push_swap->stack_b, &push_swap->tail_b);
 	count_op(push_swap, OP_SS);
+	count_op(push_swap, OP_TYPES_TOTAL);
 }

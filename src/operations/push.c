@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 15:08:24 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/27 14:31:27 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/28 15:08:36 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	pa(t_push_swap *push_swap)
 	tails_checker(push_swap->stack_b, &push_swap->tail_b);
 	tails_checker(push_swap->stack_a, &push_swap->tail_a);
 	count_op(push_swap, OP_PA);
+	count_op(push_swap, OP_TYPES_TOTAL);
 }
 
 void	pb(t_push_swap *push_swap)
@@ -50,4 +51,5 @@ void	pb(t_push_swap *push_swap)
 	tails_checker(push_swap->stack_a, &push_swap->tail_a);
 	tails_checker(push_swap->stack_b, &push_swap->tail_b);
 	count_op(push_swap, OP_PB);
+	count_op(push_swap, OP_TYPES_TOTAL);
 }
