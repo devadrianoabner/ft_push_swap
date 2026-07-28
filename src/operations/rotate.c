@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 15:08:55 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/27 14:46:59 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/28 15:03:51 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static void	rotate_values(t_node **stack, t_node **tail)
 	temp->next = NULL;
 	*tail = temp;
 }
+
 void	ra(t_push_swap *push_swap)
 {
 	if (!push_swap->stack_a || !push_swap->stack_a->next)

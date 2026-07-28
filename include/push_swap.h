@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 13:08:00 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/28 14:59:09 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/28 15:03:27 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,19 @@ typedef struct s_flag
 
 typedef enum e_op
 {
-	OP_SA,	// 0
-	OP_SB,	// 1
-	OP_SS,	// 2
-	OP_PA,	// 3
-	OP_PB,	// 4
-	OP_RA,	// 5
-	OP_RB,	// 6
-	OP_RR,	// 7
-	OP_RRA,	// 8
-	OP_RRB,	// 9
-	OP_RRR,	// 10
-	OP_TYPES_TOTAL	// 11
-} t_op;
+	OP_SA,
+	OP_SB,
+	OP_SS,
+	OP_PA,
+	OP_PB,
+	OP_RA,
+	OP_RB,
+	OP_RR,
+	OP_RRA,
+	OP_RRB,
+	OP_RRR,
+	OP_TYPES_TOTAL
+}	t_op;
 
 typedef struct s_push_swap
 {
@@ -75,7 +75,7 @@ int				stack_size(t_node *stack);
 int				is_empty(t_node *stack);
 t_node			*second_last(t_node *stack);
 // metrics
-void	count_op(t_push_swap *push_swap, t_op op);
+void			count_op(t_push_swap *push_swap, t_op op);
 // temporário, só para ambiente de testes
 t_push_swap		*build_dummy_stack(int *values_a, int n_a,
 					int *values_b, int n_b);

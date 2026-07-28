@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 15:08:51 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/27 14:42:11 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/28 15:03:43 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static void	reverse_values(t_node **stack, t_node **tail)
 	*stack = temp;
 	*tail = penultimate;
 }
+
 void	rra(t_push_swap *push_swap)
 {
 	if (!push_swap->stack_a || !push_swap->stack_a->next)
