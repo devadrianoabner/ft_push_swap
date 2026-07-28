@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 13:08:00 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/25 14:17:32 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/28 14:59:09 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ typedef struct s_push_swap
 	t_node	*stack_b;
 	t_node	*tail_b;
 	int		op_counts[OP_TYPES_TOTAL];
-	int		total_ops;
 }	t_push_swap;
 
 int				is_valid(char *str);
