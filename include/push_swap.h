@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafcrist <rafcrist@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 13:08:00 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/28 17:54:38 by rafcrist         ###   ########.fr       */
+/*   Updated: 2026/07/30 20:05:07 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <stdio.h> // retirar depois
 # include "libft.h"
+
+# define GET_MIN 0
+# define GET_MAX 1
 
 typedef struct s_node
 {
@@ -53,7 +56,6 @@ typedef struct s_push_swap
 	int		op_counts[OP_TYPES_TOTAL];
 }	t_push_swap;
 
-<<<<<<< HEAD
 int				is_valid(char *str);
 int				has_duplicate(t_push_swap *push_swap, int temp_num);
 // push
@@ -76,6 +78,10 @@ int				stack_size(t_node *stack);
 int				is_empty(t_node *stack);
 t_node			*second_last(t_node *stack);
 int				stack_a_add_back(t_push_swap *push_swap, int value);
+int				is_sorted(t_node *stack);
+// node
+int				node_compare(t_node *src, t_node *dest);
+t_node			*get_node(t_node *stack, int type);
 // metrics
 void			count_op(t_push_swap *push_swap, t_op op);
 // temporário, só para ambiente de testes
@@ -85,8 +91,9 @@ void			print_stack(t_node *stack_a);
 void			free_stack(t_node *stack);
 // parser
 int	is_valid(char *str);
-int	has_duplicate(t_ps *push_swap, int temp_num);
+int	has_duplicate(t_push_swap *push_swap, int temp_num);
 int	is_flag(char *str);
 int	is_int_range(char *str);
+
 
 #endif
