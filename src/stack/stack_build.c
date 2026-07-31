@@ -33,3 +33,14 @@ int	stack_a_add_back(t_push_swap *push_swap, int value)
 	}
 	return (1);
 }
+
+/*
+index
+1 0 0
+3 1 2
+5 2 4
+4 3 3
+6 4 5
+2 5 1
+9 6 7
+851819 7 6*/

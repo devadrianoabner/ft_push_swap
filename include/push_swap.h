@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 13:08:00 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/30 20:05:07 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/07/30 20:47:01 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,9 @@ int				node_compare(t_node *src, t_node *dest);
 t_node			*get_node(t_node *stack, int type);
 // metrics
 void			count_op(t_push_swap *push_swap, t_op op);
+// SIMPLE -> controller
+void			simple_sort(t_push_swap *push_swap);
+
 // temporário, só para ambiente de testes
 t_push_swap		*build_dummy_stack(int *values_a, int n_a,
 					int *values_b, int n_b);
