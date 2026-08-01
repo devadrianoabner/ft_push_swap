@@ -6,7 +6,7 @@
 /*   By: rafcrist <rafcrist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 19:45:03 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/28 17:55:06 by rafcrist         ###   ########.fr       */
+/*   Updated: 2026/07/29 15:30:41 by rafcrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,29 +64,6 @@ int	has_duplicate(t_push_swap *push_swap, int temp_num)
 		if (stack->value == temp_num)
 			return (1);
 		stack = stack->next;
-	}
-	return (0);
-}
-
-int	is_flag(char *str)
-{
-	int		i;
-	char	*flags[6];
-
-	i = 0;
-	flags[0] = "--simple";
-	flags[1] = "--medium";
-	flags[2] = "--complex";
-	flags[3] = "--adaptive";
-	flags[4] = "--bench";
-	flags[5] = NULL;
-
-	while (flags[i])
-	{
-		if (ft_strlen(str) == ft_strlen(flags[i])
-		&& ft_strncmp(str, flags[i], ft_strlen(str)) == 0)
-			return (1);
-		i++;
 	}
 	return (0);
 }

@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   stack_free.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafcrist <rafcrist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/16 12:38:48 by adrianda          #+#    #+#             */
-/*   Updated: 2026/08/01 17:02:05 by rafcrist         ###   ########.fr       */
+/*   Created: 2026/08/01 17:02:38 by rafcrist          #+#    #+#             */
+/*   Updated: 2026/08/01 17:08:25 by rafcrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	free_stack(t_node *stack)
 {
-	if (argc == 0)
-		return (0);
-	printf("%s", argv[1]);
-	return (0);
+	t_node	*next;
+
+	while (stack)
+	{
+		next = stack->next;
+		free(stack);
+		stack = next;
+	}
 }
