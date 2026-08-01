@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 15:08:24 by adrianda          #+#    #+#             */
-/*   Updated: 2026/08/01 18:09:48 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/08/01 18:44:08 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ static void	push_values(t_node **src, t_node **dest)
 	*dest = temp;
 }
 
-
 void	pa(t_push_swap *push_swap)
 {
 	if (!push_swap->stack_b)
@@ -38,6 +37,5 @@ void	pb(t_push_swap *push_swap)
 	if (!push_swap->stack_a)
 		return ;
 	push_values(&push_swap->stack_a, &push_swap->stack_b);
-
 	count_op(push_swap, OP_PB);
 }

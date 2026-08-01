@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 18:53:27 by adrianda          #+#    #+#             */
-/*   Updated: 2026/08/01 17:18:40 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/08/01 18:45:30 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	is_empty(t_node *stack)
 {
 	return (stack == NULL);
 }
-
 
 int	is_sorted(t_node *stack)
 {
