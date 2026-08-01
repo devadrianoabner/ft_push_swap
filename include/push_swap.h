@@ -6,7 +6,7 @@
 /*   By: rafcrist <rafcrist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 13:08:00 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/29 20:26:45 by rafcrist         ###   ########.fr       */
+/*   Updated: 2026/08/01 17:03:04 by rafcrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,6 @@ void			count_op(t_push_swap *push_swap, t_op op);
 t_push_swap		*build_dummy_stack(int *values_a, int n_a,
 					int *values_b, int n_b);
 void			print_stack(t_node *stack_a);
-void			free_stack(t_node *stack);
 // parser
 int				has_duplicate(t_push_swap *push_swap, int temp_num);
 t_flag_id		get_flag_code(char *str);
@@ -101,5 +100,9 @@ t_flag_id		get_flag_code(char *str);
 int				parse_arguments(int argc, char **argv, t_push_swap *push_swap);
 //initialization
 void			init_push_swap(t_push_swap *push_swap);
+// clean
+void			cleanup_push_swap(t_push_swap *push_swap);
+void			free_stack(t_node *stack);
+int				handle_error(t_push_swap *push_swap);
 
 #endif
