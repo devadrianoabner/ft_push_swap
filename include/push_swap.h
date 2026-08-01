@@ -87,16 +87,16 @@ void			count_op(t_push_swap *push_swap, t_op op);
 // SIMPLE -> controller
 void			simple_sort(t_push_swap *push_swap);
 
-// temporário, só para ambiente de testes
-t_push_swap		*build_dummy_stack(int *values_a, int n_a,
-					int *values_b, int n_b);
-void			print_stack(t_node *stack_a);
-void			free_stack(t_node *stack);
 // parser
 int	is_valid(char *str);
 int	has_duplicate(t_push_swap *push_swap, int temp_num);
 int	is_flag(char *str);
 int	is_int_range(char *str);
 
+// temporário, só para ambiente de testes
+t_push_swap		*build_dummy_stack(int *values_a, int n_a,
+					int *values_b, int n_b);
+void			print_stack(t_node *stack_a);
+void			free_stack(t_node *stack);
 
 #endif

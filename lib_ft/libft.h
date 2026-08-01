@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stddef.h>
+# include <limits.h>
 
 //Classificação e Conversão de Caracteres
 int			ft_isdigit(int c);

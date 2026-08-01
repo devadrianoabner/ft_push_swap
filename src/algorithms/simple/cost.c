@@ -12,3 +12,22 @@
 
 #include "push_swap.h"
 
+void	calculate_cost(t_node *stack_a, t_node *stack_b)
+{
+	int		len_a;
+	int		len_b;
+	int		i;
+	t_node	*current_a;
+	t_node	*current_b;
+
+	len_a = stack_size(stack_a);
+	len_b = stack_size(stack_b);
+	current_a = stack_a;
+	current_b = stack_b;
+	i = 0;
+	while (current_a)
+	{
+		i++;
+		current_a = current_a->next;
+	}
+}

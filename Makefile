@@ -14,10 +14,37 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -Iinclude -Ilib_ft
 
+# Módulos de pastas
 LIB_DIR = lib_ft
 LIBFT = $(LIB_DIR)/libft.a
+DIR_PARSE = src/parse/
+DIR_STACK = src/stack/
+DIR_NODE = src/stack/node/
+DIR_OPERATIONS = src/operations/
+DIR_METRICS = src/metrics/
+DIR_SIMPLE = src/algorithms/simple/
+#DIR_MEDIUM = src/algorithms/medium/
+#DIR_COMPLEX = src/algorithms/complex/
 
-SRCS = src/main.c
+# Arquivos de módulos
+SRC_MAIN = src/main.c
+SRC_PARSE = $(DIR_PARSE)validate.c
+SRC_STACK = $(DIR_STACK)stack_build.c $(DIR_STACK)stack_inspect.c 
+SRC_NODE = $(DIR_NODE)get_node.c $(DIR_NODE)node_inspect.c 
+SRC_OPERATIONS = $(DIR_OPERATIONS)push.c $(DIR_OPERATIONS)r_reverse.c \
+                 $(DIR_OPERATIONS)rotate.c $(DIR_OPERATIONS)swap.c
+SRC_METRICS = $(DIR_METRICS)count_op.c
+SRC_SIMPLE = $(DIR_SIMPLE)controller.c $(DIR_SIMPLE)cost.c $(DIR_SIMPLE)moves.c \
+             $(DIR_SIMPLE)position.c $(DIR_SIMPLE)sort_push.c
+#SRC_MEDIUM = $(DIR_MEDIUM)
+#SRC_COMPLEX =  $(DIR_COMPLEX)
+
+# Junção de todos os arquivos fonte
+SRCS = $(SRC_MAIN) $(SRC_PARSE) $(SRC_STACK) $(SRC_NODE) $(SRC_OPERATIONS) \
+       $(SRC_METRICS) $(SRC_SIMPLE)
+
+SRCS = $(SRC_MAIN) $(SRC_PARSE) $(SRC_STACK) $(DIR_OPERATIONS) $(DIR_METRICS) \
+$(SRC_SIMPLE)
 
 OBJS = $(SRCS:.c=.o)
 
