@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   simple.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/01 18:47:53 by adrianda          #+#    #+#             */
+/*   Updated: 2026/08/01 18:48:13 by adrianda         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SIMPLE_H
 # define SIMPLE_H
 
@@ -9,7 +21,7 @@ typedef struct s_move {
 	int		cost_a;
 	int		cost_b;
 	int		total_cost;
-} t_move;
+}	t_move;
 
 void	greedy_sort(t_push_swap *push_swap);
 void	calculate_cost(t_node *stack_a, t_node *stack_b);

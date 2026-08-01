@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 20:22:35 by adrianda          #+#    #+#             */
-/*   Updated: 2026/08/01 18:33:41 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/08/01 18:47:00 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	greedy_sort(t_push_swap *push_swap)
 		// target, cost e moves -> ordenação dinâmica da pilha b de forma decrescente com movimentos entre pilha a e b
 	}
 	// chama a função que ordena os 3 itens na pilha a
-	
 	// devolve tudo para a pilha A (loop de pa)
 }
 
