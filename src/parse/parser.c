@@ -6,11 +6,26 @@
 /*   By: rafcrist <rafcrist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 16:46:03 by rafcrist          #+#    #+#             */
-/*   Updated: 2026/07/29 20:09:06 by rafcrist         ###   ########.fr       */
+/*   Updated: 2026/08/01 19:00:21 by rafcrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	free_split(char **split)
+{
+	int	i;
+
+	i = 0;
+	if (split == NULL)
+		return ;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+}
 
 static int	parse_number(char *str, t_push_swap *push_swap)
 {
@@ -23,6 +38,33 @@ static int	parse_number(char *str, t_push_swap *push_swap)
 		return (0);
 	if (!stack_a_add_back(push_swap, n))
 		return (0);
+	return (1);
+}
+
+static int	parse_group(char *argument, t_push_swap *push_swap)
+{
+	char	**splitted;
+	int		i;
+
+	i = 0;
+	splitted = ft_split(argument, ' ');
+	if (splitted == NULL)
+		return (0);
+	if (splitted[0] == NULL)
+	{
+		free_split(splitted);
+		return (0);
+	}
+	while (splitted[i])
+	{
+		if (!parse_number(splitted[i], push_swap))
+		{
+			free_split(splitted);
+			return (0);
+		}
+		i++;
+	}
+	free_split(splitted);
 	return (1);
 }
 
@@ -64,7 +106,7 @@ int	parse_arguments(int argc, char **argv, t_push_swap *push_swap)
 		}
 		else
 		{
-			if (!parse_number(argv[i], push_swap))
+			if (!parse_group(argv[i], push_swap))
 				return (0);
 		}
 		i++;
