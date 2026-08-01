@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_push_swap.c                                   :+:      :+:    :+:   */
+/*   cost.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/29 16:27:33 by rafcrist          #+#    #+#             */
-/*   Updated: 2026/08/01 18:34:24 by adrianda         ###   ########.fr       */
+/*   Created: 2026/07/30 20:21:55 by adrianda          #+#    #+#             */
+/*   Updated: 2026/08/01 18:47:29 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_push_swap(t_push_swap *push_swap)
+void	calculate_cost(t_node *stack_a, t_node *stack_b)
 {
-	int	i;
+	int		len_a;
+	int		len_b;
+	int		i;
+	t_node	*current_a;
+	t_node	*current_b;
 
-	push_swap->stack_a = NULL;
-	push_swap->stack_b = NULL;
-	push_swap->bench = 0;
-	push_swap->strategy = FLAG_ADAPTIVE;
+	len_a = stack_size(stack_a);
+	len_b = stack_size(stack_b);
+	current_a = stack_a;
+	current_b = stack_b;
 	i = 0;
-	while (i < OP_TYPES_TOTAL)
+	while (current_a)
 	{
-		push_swap->op_counts[i] = 0;
 		i++;
+		current_a = current_a->next;
 	}
 }

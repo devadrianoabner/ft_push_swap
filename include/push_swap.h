@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafcrist <rafcrist@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 13:08:00 by adrianda          #+#    #+#             */
-/*   Updated: 2026/08/01 17:03:04 by rafcrist         ###   ########.fr       */
+/*   Updated: 2026/08/01 18:31:31 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <stdio.h> // retirar depois
 # include "libft.h"
+
+# define GET_MIN 0
+# define GET_MAX 1
 
 typedef struct s_node
 {
@@ -57,52 +60,56 @@ typedef enum e_op
 typedef struct s_push_swap
 {
 	t_node		*stack_a;
-	t_node		*tail_a;
 	t_node		*stack_b;
-	t_node		*tail_b;
 	int			op_counts[OP_TYPES_TOTAL];
 	int			bench;
 	t_flag_id	strategy;
 }	t_push_swap;
 
-// push
+/* --- PARSER --- */
+int				is_valid(char *str);
+int				has_duplicate(t_push_swap *push_swap, int temp_num);
+int				is_flag(char *str);
+int				is_int_range(char *str);
+t_flag_id		get_flag_code(char *str);
+int				parse_arguments(int argc, char **argv, t_push_swap *push_swap);
+int				handle_error(t_push_swap *push_swap);
+/* --- INITIALIZATION --- */
+void			init_push_swap(t_push_swap *push_swap);
+/* --- CLEAN --- */
+void			cleanup_push_swap(t_push_swap *push_swap);
+void			free_stack(t_node *stack);
+/* --- PUSH --- */
 void			pa(t_push_swap *push_swap);
 void			pb(t_push_swap *push_swap);
-// rotate reverse
+/* --- ROTATE REVERSE --- */
 void			rra(t_push_swap *push_swap);
 void			rrb(t_push_swap *push_swap);
 void			rrr(t_push_swap *push_swap);
-// rotate
+/* --- ROTATE --- */
 void			ra(t_push_swap *push_swap);
 void			rb(t_push_swap *push_swap);
 void			rr(t_push_swap *push_swap);
-// swap
+/* --- SWAP --- */
 void			sa(t_push_swap *push_swap);
 void			sb(t_push_swap *push_swap);
 void			ss(t_push_swap *push_swap);
-// stack
+/* --- STACK --- */
 int				stack_size(t_node *stack);
 int				is_empty(t_node *stack);
 t_node			*second_last(t_node *stack);
 int				stack_a_add_back(t_push_swap *push_swap, int value);
-// metrics
+int				is_sorted(t_node *stack);
+t_node			*find_tail(t_node *stack);
+/* --- NODE --- */
+int				node_compare(t_node *src, t_node *dest);
+t_node			*get_node(t_node *stack, int type);
+/* --- METRICS --- */
 void			count_op(t_push_swap *push_swap, t_op op);
-// temporário, só para ambiente de testes
+/* --- SIMPLE CONTROLLER --- */
+void			simple_sort(t_push_swap *push_swap);
+/* --- TEMPORÁRIO: ambiente de testes --- */
 t_push_swap		*build_dummy_stack(int *values_a, int n_a,
 					int *values_b, int n_b);
 void			print_stack(t_node *stack_a);
-// parser
-int				has_duplicate(t_push_swap *push_swap, int temp_num);
-t_flag_id		get_flag_code(char *str);
-int				is_int_range(char *str);
-int				is_valid(char *str);
-t_flag_id		get_flag_code(char *str);
-int				parse_arguments(int argc, char **argv, t_push_swap *push_swap);
-//initialization
-void			init_push_swap(t_push_swap *push_swap);
-// clean
-void			cleanup_push_swap(t_push_swap *push_swap);
-void			free_stack(t_node *stack);
-int				handle_error(t_push_swap *push_swap);
-
 #endif
