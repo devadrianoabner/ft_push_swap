@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 18:53:27 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/30 20:06:25 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/08/01 17:18:40 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,21 @@ int	is_sorted(t_node *stack)
 {
 	if (!stack)
 		return (0);
-	while (stack->next != NULL && node_inspect(stack, stack->next))
+	while (stack->next != NULL && node_compare(stack, stack->next))
 		stack = stack->next;
 	if (stack->next == NULL)
 		return (1);
 	return (0);
+}
+
+t_node	*find_tail(t_node *stack)
+{
+	t_node	*tail;
+
+	if (!stack)
+		return (NULL);
+	while (stack->next != NULL)
+		stack = stack->next;
+	tail = stack;
+	return (tail);
 }

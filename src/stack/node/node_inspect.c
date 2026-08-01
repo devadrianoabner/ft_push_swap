@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 18:31:36 by adrianda          #+#    #+#             */
-/*   Updated: 2026/07/30 20:07:18 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/08/01 17:09:22 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static	t_node *find_max_node(t_node *stack)
 {
-	t_node *max_node;
+	t_node	*max_node;
 
 	if (!stack)
 		return (NULL);
@@ -30,7 +30,7 @@ static	t_node *find_max_node(t_node *stack)
 
 static	t_node *find_min_node(t_node *stack)
 {
-	t_node *min_node;
+	t_node	*min_node;
 
 	if (!stack)
 	return (NULL);
@@ -61,12 +61,11 @@ t_node	*second_last(t_node *stack)
 
 t_node	*get_node(t_node *stack, int type)
 {
-	t_node *result;
 	if (!stack)
 		return (NULL);
 	if (type == GET_MIN)
 		return (find_min_node(stack));
 	else if (type == GET_MAX)
-		return (find_min_max(stack));
+		return (find_max_node(stack));
 	return (NULL);
 }
