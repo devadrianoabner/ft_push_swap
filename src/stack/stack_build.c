@@ -27,6 +27,7 @@ static t_node	*create_node(int value)
 int	stack_a_add_back(t_push_swap *push_swap, int value)
 {
 	t_node	*new_node;
+	t_node	*tail;
 
 	if (push_swap == NULL)
 		return (0);
@@ -35,5 +36,10 @@ int	stack_a_add_back(t_push_swap *push_swap, int value)
 		return (0);
 	if (push_swap->stack_a == NULL)
 		push_swap->stack_a = new_node;
+	else
+	{
+		tail = find_tail(push_swap->stack_a);
+		tail->next = new_node;
+	}
 	return (1);
 }
