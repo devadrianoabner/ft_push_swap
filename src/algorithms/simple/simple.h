@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/01 18:47:53 by adrianda          #+#    #+#             */
-/*   Updated: 2026/08/01 18:48:13 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/08/01 22:07:27 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,23 @@ typedef struct s_move {
 	int		total_cost;
 }	t_move;
 
+/* --- CONTROLLER --- */
 void	greedy_sort(t_push_swap *push_swap);
-void	calculate_cost(t_node *stack_a, t_node *stack_b);
-t_node	*get_target_position(t_node *stack_a, t_node *stack_b);
+//void	final_alignment(t_node **stack_a);
+/* --- COST --- */
+void	calculate_cost(t_node *stack_a, t_node *stack_b, t_move *move);
+//int	get_single_cost(int size, int index);
+//void	optimize_total_cost(t_move *move);
+/* --- MOVES --- */
+//void	apply_moves(t_push_swap *push_swap, t_move *move);
+//void	rotate_both(t_push_swap *push_swap, t_move *move);
+//void	rotate_a(t_push_swap *push_swap, t_move *move);
+//void	rotate_b(t_push_swap *push_swap, t_move *move);
+/* --- POSITION --- */
+t_node	*get_target_node(t_node *stack_a, t_node *stack_b);
+/* --- SORT_PUSH --- */
+//t_node	*get_cheapest_node(t_push_swap *push_swap);
+//void	push_cheapest_to_b(t_push_swap *push_swap);
+//void	push_all_to_a(t_push_swap *push_swap);
 
 #endif

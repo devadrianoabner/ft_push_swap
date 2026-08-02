@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 18:53:27 by adrianda          #+#    #+#             */
-/*   Updated: 2026/08/01 18:45:30 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/08/01 21:18:19 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,20 @@ t_node	*find_tail(t_node *stack)
 		stack = stack->next;
 	tail = stack;
 	return (tail);
+}
+int	get_index(t_node *stack, t_node *node)
+{
+	int		index;
+	t_node	*current;
+
+	index = 0;
+	current = stack;
+	while (current != NULL)
+	{
+		if (current == node)
+			return (index);
+		index++;
+		current = current->next;
+	}
+	return (-1);
 }

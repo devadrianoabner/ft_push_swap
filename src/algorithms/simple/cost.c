@@ -6,28 +6,25 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 20:21:55 by adrianda          #+#    #+#             */
-/*   Updated: 2026/08/01 18:47:29 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/08/01 21:54:31 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "simple.h"
 
-void	calculate_cost(t_node *stack_a, t_node *stack_b)
+void	calculate_cost(t_node *stack_a, t_node *stack_b, t_move *move)
 {
-	int		len_a;
-	int		len_b;
-	int		i;
-	t_node	*current_a;
-	t_node	*current_b;
+	int	size_a;
+	int	index_a;
 
-	len_a = stack_size(stack_a);
-	len_b = stack_size(stack_b);
-	current_a = stack_a;
-	current_b = stack_b;
-	i = 0;
-	while (current_a)
-	{
-		i++;
-		current_a = current_a->next;
-	}
+	size_a = stack_size(stack_a);
+	index_a = get_index(stack_a, move->node_a);
+	if (index_a <= size_a / 2)
+		move->cost_a = index_a;
+	else
+		move->cost_a = (size_a - index_a) * -1;
 }
+
+//int	get_single_cost(int size, int index);
+//void	optimize_total_cost(t_move *move);
