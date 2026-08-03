@@ -28,8 +28,7 @@ void	greedy_sort(t_push_swap *push_swap);
 //void	final_alignment(t_node **stack_a);
 /* --- COST --- */
 void	calculate_cost(t_node *stack_a, t_node *stack_b, t_move *move);
-//int	get_single_cost(int size, int index);
-//void	optimize_total_cost(t_move *move);
+void	optimize_total_cost(t_move *move);
 /* --- MOVES --- */
 //void	apply_moves(t_push_swap *push_swap, t_move *move);
 //void	rotate_both(t_push_swap *push_swap, t_move *move);

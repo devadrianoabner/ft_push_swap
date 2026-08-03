@@ -13,18 +13,47 @@
 #include "push_swap.h"
 #include "simple.h"
 
+static int	get_single_cost(int size, int index)
+{
+	if (index <= size / 2)
+		return (index);
+	else return ((size - index) * -1);
+}
+
 void	calculate_cost(t_node *stack_a, t_node *stack_b, t_move *move)
 {
 	int	size_a;
+	int	size_b;
 	int	index_a;
+	int	index_b;
 
 	size_a = stack_size(stack_a);
+	size_b = stack_size(stack_b);
 	index_a = get_index(stack_a, move->node_a);
-	if (index_a <= size_a / 2)
-		move->cost_a = index_a;
-	else
-		move->cost_a = (size_a - index_a) * -1;
+	index_b = get_index(stack_b, move->target_b);
+	move_cost_a = get_single_cost(size_a, index_a);
+	move_cost_b = get_single_cost(size_b, index_b);
 }
 
-//int	get_single_cost(int size, int index);
-//void	optimize_total_cost(t_move *move);
+void	optimize_total_cost(t_move *move)
+{
+	int	cost_a;
+	int cost_b;
+
+	cost_a = move->cost_a;
+	cost_b = move->cost_b;
+	if (cost_a < 0)
+        cost_a = cost_a * -1;
+    if (cost_b < 0)
+        cost_b = cost_b * -1;
+	if ((move->cost_a > 0 && move->cost_b > 0)
+		|| (move->cost_a < 0 && move->cost_b < 0))
+	{
+		if (cost_a >= cost_b)
+			move->total_cost = cost_a;
+		else
+			move->total_cost = cost_b;
+	}
+	else
+		move->total_cost = cost_a + cost_b;
+}
