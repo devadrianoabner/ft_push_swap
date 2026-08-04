@@ -14,7 +14,7 @@
 
 void	get_cheapest_move(t_push_swap *push_swap, t_move *best_move)
 {
-	t_move	*current_a;
+	t_node	*current_a;
 	t_move	current_move;
 
 	best_move->total_cost = INT_MAX;
@@ -24,6 +24,7 @@ void	get_cheapest_move(t_push_swap *push_swap, t_move *best_move)
 		current_move.node_a = current_a;
 		current_move.target_b = get_target_node(current_a, push_swap->stack_b);
 		calculate_cost(push_swap->stack_a, push_swap->stack_b, &current_move);
+		optimize_total_cost(&current_move);
 		if (current_move.total_cost < best_move->total_cost)
 			*best_move = current_move;
 		current_a = current_a->next;
@@ -35,7 +36,22 @@ void	push_cheapest_to_b(t_push_swap *push_swap)
     t_move	best_move;
 
 	get_cheapest_move(push_swap, &best_move);
-	//apply moves
+	apply_moves(push_swap, &best_move);
 }
 
-//void	push_all_to_a(t_push_swap *push_swap)
+// t_node  *get_target_b(t_node *stack_a, t_node *top_b);
+
+// rotate_stack_a;
+
+
+void	push_all_to_a(t_push_swap *push_swap)
+{
+	t_node *target_node;
+
+	while (push_swap->stack_b)
+	{
+		target_node = get_target_b(push_swap->stack_a, push_swap->stack_b);
+		rotate_stack_a(push_swap, target_node);
+		pa(push_swap);
+	}
+}

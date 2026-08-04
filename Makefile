@@ -38,7 +38,8 @@ SRC_OPERATIONS = $(DIR_OPERATIONS)push.c $(DIR_OPERATIONS)r_reverse.c \
                  $(DIR_OPERATIONS)rotate.c $(DIR_OPERATIONS)swap.c
 SRC_METRICS = $(DIR_METRICS)count_op.c
 SRC_SIMPLE = $(DIR_SIMPLE)controller.c $(DIR_SIMPLE)cost.c $(DIR_SIMPLE)moves.c \
-             $(DIR_SIMPLE)position.c $(DIR_SIMPLE)sort_push.c
+             $(DIR_SIMPLE)position.c $(DIR_SIMPLE)sort_push.c \
+			 $(DIR_SIMPLE)sort_three.c
 SRC_INIT = $(DIR_INIT)init_push_swap.c
 SRC_ERROR = $(DIR_ERROR)error.c
 #SRC_MEDIUM = $(DIR_MEDIUM)

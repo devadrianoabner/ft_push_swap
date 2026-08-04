@@ -17,7 +17,7 @@
 
 typedef struct s_move {
 	t_node	*node_a;
-	t_node	*node_b;
+	t_node	*target_b;
 	int		cost_a;
 	int		cost_b;
 	int		total_cost;
@@ -40,5 +40,8 @@ t_node	*get_target_node(t_node *stack_a, t_node *stack_b);
 t_node	*get_cheapest_node(t_push_swap *push_swap);
 void	push_cheapest_to_b(t_push_swap *push_swap);
 //void	push_all_to_a(t_push_swap *push_swap);
+/* --- SORT_THREE --- */
+void	sort_three(t_push_swap *push_swap);
+
 
 #endif
