@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "simple.h"
+#include "common.h"
 
 int	get_single_cost(int size, int index)
 {
