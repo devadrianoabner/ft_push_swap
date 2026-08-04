@@ -30,15 +30,15 @@ void	greedy_sort(t_push_swap *push_swap);
 void	calculate_cost(t_node *stack_a, t_node *stack_b, t_move *move);
 void	optimize_total_cost(t_move *move);
 /* --- MOVES --- */
-//void	apply_moves(t_push_swap *push_swap, t_move *move);
-//void	rotate_both(t_push_swap *push_swap, t_move *move);
-//void	rotate_a(t_push_swap *push_swap, t_move *move);
-//void	rotate_b(t_push_swap *push_swap, t_move *move);
+void	apply_moves(t_push_swap *push_swap, t_move *move);
+void	rotate_both(t_push_swap *push_swap, t_move *move);
+void	rotate_a(t_push_swap *push_swap, t_move *move);
+void	rotate_b(t_push_swap *push_swap, t_move *move);
 /* --- POSITION --- */
 t_node	*get_target_node(t_node *stack_a, t_node *stack_b);
 /* --- SORT_PUSH --- */
-//t_node	*get_cheapest_node(t_push_swap *push_swap);
-//void	push_cheapest_to_b(t_push_swap *push_swap);
+t_node	*get_cheapest_node(t_push_swap *push_swap);
+void	push_cheapest_to_b(t_push_swap *push_swap);
 //void	push_all_to_a(t_push_swap *push_swap);
 
 #endif

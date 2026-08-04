@@ -12,8 +12,30 @@
 
 #include "push_swap.h"
 
-//t_node	*get_cheapest_node(t_push_swap *push_swap)
+void	get_cheapest_move(t_push_swap *push_swap, t_move *best_move)
+{
+	t_move	*current_a;
+	t_move	current_move;
 
-//void	push_cheapest_to_b(t_push_swap *push_swap)
+	best_move->total_cost = INT_MAX;
+	current_a = push_swap->stack_a;
+	while (current_a)
+	{
+		current_move.node_a = current_a;
+		current_move.target_b = get_target_node(current_a, push_swap->stack_b);
+		calculate_cost(push_swap->stack_a, push_swap->stack_b, &current_move);
+		if (current_move.total_cost < best_move->total_cost)
+			*best_move = current_move;
+		current_a = current_a->next;
+	}
+}
+
+void	push_cheapest_to_b(t_push_swap *push_swap)
+{
+    t_move	best_move;
+
+	get_cheapest_move(push_swap, &best_move);
+	//apply moves
+}
 
 //void	push_all_to_a(t_push_swap *push_swap)
