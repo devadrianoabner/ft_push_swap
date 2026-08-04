@@ -25,7 +25,6 @@ typedef struct s_move {
 
 /* --- CONTROLLER --- */
 void	greedy_sort(t_push_swap *push_swap);
-//void	final_alignment(t_node **stack_a);
 /* --- COST --- */
 void	calculate_cost(t_node *stack_a, t_node *stack_b, t_move *move);
 void	optimize_total_cost(t_move *move);

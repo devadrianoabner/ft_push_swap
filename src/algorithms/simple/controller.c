@@ -17,9 +17,9 @@ void	greedy_sort(t_push_swap *push_swap)
 	while (stack_size(push_swap->stack_a) > 3)
 		push_cheapest_to_b(push_swap);
 	sort_three(push_swap);
-	// devolve tudo para a pilha A (loop de pa)
+	push_all_to_a(push_swap);
 }
-//void	final_alignment(t_node **stack_a);
+
 
 void	simple_sort(t_push_swap *push_swap)
 {
