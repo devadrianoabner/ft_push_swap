@@ -19,7 +19,7 @@ LIBFT = $(LIB_DIR)/libft.a
 
 # Todo .c de src/, menos main.c (senão colide com o main() daqui)
 #Uso de wildcard para facilitar a compilação, visto que esse arquivo não será entregue
-SRC_FILES = $(filter-out ../src/main.c, $(wildcard ../src/*/*.c))
+SRC_FILES = $(filter-out ../src/main.c, $(wildcard ../src/*/*.c ../src/*/*/*.c))
 
 # Arquivos do diretório de testes
 TEST_FILES = main_test.c debug/print_stack.c dummy/build_dummy_stack.c

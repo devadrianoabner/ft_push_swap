@@ -6,7 +6,7 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 13:08:00 by adrianda          #+#    #+#             */
-/*   Updated: 2026/08/01 18:31:31 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/08/01 21:15:44 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ t_node			*second_last(t_node *stack);
 int				stack_a_add_back(t_push_swap *push_swap, int value);
 int				is_sorted(t_node *stack);
 t_node			*find_tail(t_node *stack);
+int				get_index(t_node *stack, t_node *node);
 /* --- NODE --- */
 int				node_compare(t_node *src, t_node *dest);
 t_node			*get_node(t_node *stack, int type);

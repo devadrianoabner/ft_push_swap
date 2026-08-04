@@ -12,19 +12,6 @@
 
 #include "push_swap.h"
 
-void	free_stack(t_node *stack)
-{
-	t_node	*temp;
-
-	if (!stack)
-		return ;
-	while (stack != NULL)
-	{
-		temp = stack;
-		stack = stack->next;
-		free(temp);
-	}
-}
 
 static t_node	*create_node(int value)
 {
@@ -37,26 +24,27 @@ static t_node	*create_node(int value)
 	return (new);
 }
 
-static void	insert_node(t_node **stack, t_node **tail, t_node *new)
+static void	insert_node(t_node **stack, t_node *new)
 {
+	t_node	*tail;
+
 	if (!*stack)
 	{
 		*stack = new;
-		*tail = new;
 		return ;
 	}
-	(*tail)->next = new;
-	*tail = new;
+	tail = find_tail(*stack);
+	tail->next = new;
 }
 
-static void	fill_stack(t_node **stack, t_node **tail, int *values, int n)
+static void	fill_stack(t_node **stack, int *values, int n)
 {
 	int	i;
 
 	i = 0;
 	while (i < n)
 	{
-		insert_node(stack, tail, create_node(values[i]));
+		insert_node(stack, create_node(values[i]));
 		i++;
 	}
 }
@@ -68,7 +56,7 @@ t_push_swap	*build_dummy_stack(int *values_a, int n_a, int *values_b, int n_b)
 	push_swap = ft_calloc(sizeof(t_push_swap), 1);
 	if (!push_swap)
 		return (NULL);
-	fill_stack(&push_swap->stack_a, &push_swap->tail_a, values_a, n_a);
-	fill_stack(&push_swap->stack_b, &push_swap->tail_b, values_b, n_b);
+	fill_stack(&push_swap->stack_a, values_a, n_a);
+	fill_stack(&push_swap->stack_b, values_b, n_b);
 	return (push_swap);
 }
