@@ -13,7 +13,7 @@
 #include "push_swap.h"
 #include "simple.h"
 
-static int    get_single_cost(int size, int index)
+int	get_single_cost(int size, int index)
 {
     if (index <= size / 2)
         return (index);

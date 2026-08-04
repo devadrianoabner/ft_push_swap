@@ -39,9 +39,18 @@ void	push_cheapest_to_b(t_push_swap *push_swap)
 	apply_moves(push_swap, &best_move);
 }
 
-// t_node  *get_target_b(t_node *stack_a, t_node *top_b);
+void	rotate_stack_a(t_push_swap *push_swap, t_node *target)
+{
+	t_move	move;
+	int		size_a;
+	int		index_a;
 
-// rotate_stack_a;
+	size_a = stack_size(push_swap->stack_a);
+	index_a = get_index(push_swap->stack_a, target);
+	move.cost_a = get_single_cost(size_a, index_a);
+	move.cost_b = 0;
+	rotate_a(push_swap, &move);
+}
 
 
 void	push_all_to_a(t_push_swap *push_swap)
@@ -50,8 +59,8 @@ void	push_all_to_a(t_push_swap *push_swap)
 
 	while (push_swap->stack_b)
 	{
-		//target_node = get_target_b(push_swap->stack_a, push_swap->stack_b);
-		//rotate_stack_a(push_swap, target_node);
+		target_node = get_target_node(push_swap->stack_a, push_swap->stack_b);
+		rotate_stack_a(push_swap, target_node);
 		pa(push_swap);
 	}
 }
