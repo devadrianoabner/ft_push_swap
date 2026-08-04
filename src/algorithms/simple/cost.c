@@ -13,6 +13,14 @@
 #include "push_swap.h"
 #include "simple.h"
 
+static int    get_single_cost(int size, int index)
+{
+    if (index <= size / 2)
+        return (index);
+    else return ((size - index) * -1);
+}
+
+
 static void	set_cost_a(t_node *stack_a, t_move *move)
 {
 	int	size_a;

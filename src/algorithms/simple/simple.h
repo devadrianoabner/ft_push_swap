@@ -37,9 +37,9 @@ void	rotate_b(t_push_swap *push_swap, t_move *move);
 /* --- POSITION --- */
 t_node	*get_target_node(t_node *stack_a, t_node *stack_b);
 /* --- SORT_PUSH --- */
-t_node	*get_cheapest_node(t_push_swap *push_swap);
+void	get_cheapest_move(t_push_swap *push_swap, t_move *best_move);
 void	push_cheapest_to_b(t_push_swap *push_swap);
-//void	push_all_to_a(t_push_swap *push_swap);
+void	push_all_to_a(t_push_swap *push_swap);
 /* --- SORT_THREE --- */
 void	sort_three(t_push_swap *push_swap);
 

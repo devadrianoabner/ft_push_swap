@@ -50,8 +50,8 @@ void	push_all_to_a(t_push_swap *push_swap)
 
 	while (push_swap->stack_b)
 	{
-		target_node = get_target_b(push_swap->stack_a, push_swap->stack_b);
-		rotate_stack_a(push_swap, target_node);
+		//target_node = get_target_b(push_swap->stack_a, push_swap->stack_b);
+		//rotate_stack_a(push_swap, target_node);
 		pa(push_swap);
 	}
 }
