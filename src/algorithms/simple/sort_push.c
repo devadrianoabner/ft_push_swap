@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "simple.h"
 
 void	get_cheapest_move(t_push_swap *push_swap, t_move *best_move)
 {
@@ -29,6 +30,30 @@ void	get_cheapest_move(t_push_swap *push_swap, t_move *best_move)
 			*best_move = current_move;
 		current_a = current_a->next;
 	}
+}
+
+// nova função
+t_node  *get_target_for_b(t_node *stack_a, t_node *node_b)
+{
+    t_node  *current_a;
+    t_node  *target_node;
+    long    min_bigger;
+
+    min_bigger = LONG_MAX;
+    target_node = NULL;
+    current_a = stack_a;
+    while (current_a)
+    {
+        if (current_a->value > node_b->value && current_a->value < min_bigger)
+        {
+            min_bigger = current_a->value;
+            target_node = current_a;
+        }
+        current_a = current_a->next;
+    }
+    if (target_node != NULL)
+        return (target_node);
+    return (get_node(stack_a, GET_MIN));
 }
 
 void	push_cheapest_to_b(t_push_swap *push_swap)
@@ -59,7 +84,8 @@ void	push_all_to_a(t_push_swap *push_swap)
 
 	while (push_swap->stack_b)
 	{
-		target_node = get_target_node(push_swap->stack_a, push_swap->stack_b);
+		// lembrar de inverter a para b
+		target_node = get_target_for_b(push_swap->stack_a, push_swap->stack_b);
 		rotate_stack_a(push_swap, target_node);
 		pa(push_swap);
 	}

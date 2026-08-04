@@ -12,28 +12,22 @@
 
 #include "push_swap.h"
 
-static void	print_both(t_push_swap *push_swap)
+static void	test_simple_sort(int *values, int n)
 {
-	printf("stack_a:\n");
-	print_stack(push_swap->stack_a);
-	printf("stack_b:\n");
-	print_stack(push_swap->stack_b);
-}
-
-static void	test_one(char *op_name, void (*op)(t_push_swap *))
-{
-	int			values_a[0];
-	int			values_b[0];
 	t_push_swap	*push_swap;
 
-	push_swap = build_dummy_stack(values_a, 0, values_b, 0);
-	printf("=== %s | ANTES ===\n", op_name);
-	print_both(push_swap);
-	op(push_swap);
-	printf("=== %s | DEPOIS ===\n", op_name);
-	print_both(push_swap);
-	printf("\n");
-	printf("%d", push_swap->op_counts);
+	push_swap = build_dummy_stack(values, n, NULL, 0);
+	printf("=== ANTES ===\n");
+	print_stack(push_swap->stack_a);
+	simple_sort(push_swap);
+	printf("=== DEPOIS ===\n");
+	print_stack(push_swap->stack_a);
+	if (is_sorted(push_swap->stack_a))
+		printf("\nRESULTADO: OK, esta ordenado\n");
+	else
+		printf("\nRESULTADO: FALHOU, NAO esta ordenado\n");
+	printf("stack_b deveria estar vazia: %s\n",
+		push_swap->stack_b ? "NAO ESTA (bug)" : "esta vazia (ok)");
 	free_stack(push_swap->stack_a);
 	free_stack(push_swap->stack_b);
 	free(push_swap);
@@ -41,7 +35,21 @@ static void	test_one(char *op_name, void (*op)(t_push_swap *))
 
 int	main(void)
 {
-	test_one("sb", sa);
+	int	values[12];
+
+	values[0] = 5;
+	values[1] = 1;
+	values[2] = 9;
+	values[3] = 3;
+	values[4] = 7;
+	values[5] = 2;
+	values[6] = 8;
+	values[7] = 4;
+	values[8] = 6;
+	values[9] = 12;
+	values[10] = 10;
+	values[11] = 11;
+	test_simple_sort(values, 12);
 	return (0);
 }
 /*

@@ -25,6 +25,7 @@ typedef struct s_move {
 
 /* --- CONTROLLER --- */
 void	greedy_sort(t_push_swap *push_swap);
+void    final_alignment(t_push_swap *push_swap);
 /* --- COST --- */
 void	calculate_cost(t_node *stack_a, t_node *stack_b, t_move *move);
 void	optimize_total_cost(t_move *move);
@@ -41,6 +42,7 @@ void	get_cheapest_move(t_push_swap *push_swap, t_move *best_move);
 void	push_cheapest_to_b(t_push_swap *push_swap);
 void	push_all_to_a(t_push_swap *push_swap);
 void	rotate_stack_a(t_push_swap *push_swap, t_node *target);
+t_node  *get_target_for_b(t_node *stack_a, t_node *node_b);
 /* --- SORT_THREE --- */
 void	sort_three(t_push_swap *push_swap);
 

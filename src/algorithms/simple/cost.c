@@ -63,9 +63,9 @@ void	optimize_total_cost(t_move *move)
 	cost_a = move->cost_a;
 	cost_b = move->cost_b;
 	if (cost_a < 0)
-        cost_a = cost_a * -1;
-    if (cost_b < 0)
-        cost_b = cost_b * -1;
+		cost_a = cost_a * -1;
+	if (cost_b < 0)
+		cost_b = cost_b * -1;
 	if ((move->cost_a > 0 && move->cost_b > 0)
 		|| (move->cost_a < 0 && move->cost_b < 0))
 	{

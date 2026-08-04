@@ -11,13 +11,29 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "simple.h"
+
+// nova função
+void    final_alignment(t_push_swap *push_swap)
+{
+    t_node  *min_node;
+
+    min_node = get_node(push_swap->stack_a, GET_MIN);
+    if (!min_node)
+        return ;
+    rotate_stack_a(push_swap, min_node);
+}
 
 void	greedy_sort(t_push_swap *push_swap)
 {
+	// lembrar de remover
 	while (stack_size(push_swap->stack_a) > 3)
+	{
 		push_cheapest_to_b(push_swap);
+	}
 	sort_three(push_swap);
 	push_all_to_a(push_swap);
+	final_alignment(push_swap);
 }
 
 
