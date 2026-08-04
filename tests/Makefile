@@ -12,8 +12,7 @@
 
 NAME = test_ps
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I../include -I../lib_ft
-
+CFLAGS = -Wall -Wextra -Werror -I../include -I../lib_ft -I../src/algorithms/common
 LIB_DIR = ../lib_ft
 LIBFT = $(LIB_DIR)/libft.a
 

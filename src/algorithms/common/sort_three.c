@@ -1,5 +1,5 @@
 #include "push_swap.h"
-#include "simple.h"
+#include "common.h"
 
 void	sort_three(t_push_swap *push_swap)
 {

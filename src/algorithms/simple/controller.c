@@ -12,16 +12,7 @@
 
 #include "push_swap.h"
 #include "simple.h"
-
-void    final_alignment(t_push_swap *push_swap)
-{
-    t_node  *min_node;
-
-    min_node = get_node(push_swap->stack_a, GET_MIN);
-    if (!min_node)
-        return ;
-    rotate_stack_a(push_swap, min_node);
-}
+#include "common.h"
 
 void	greedy_sort(t_push_swap *push_swap)
 {

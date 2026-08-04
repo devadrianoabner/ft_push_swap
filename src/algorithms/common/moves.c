@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "simple.h"
+#include "common.h"
 
 void	apply_moves(t_push_swap *push_swap, t_move *move)
 {
