@@ -27,7 +27,7 @@ DIR_COMMON = src/algorithms/common/
 DIR_SIMPLE = src/algorithms/simple/
 DIR_STRATEGY = src/strategy/
 #DIR_MEDIUM = src/algorithms/medium/
-#DIR_COMPLEX = src/algorithms/complex/
+DIR_COMPLEX = src/algorithms/complex/
 
 # Arquivos de módulos
 SRC_MAIN = src/main.c
@@ -44,12 +44,12 @@ SRC_COMMON = $(DIR_COMMON)cost.c $(DIR_COMMON)moves.c $(DIR_COMMON)position.c \
              $(DIR_COMMON)sort_three.c $(DIR_COMMON)return_to_a.c
 SRC_SIMPLE = $(DIR_SIMPLE)controller.c $(DIR_SIMPLE)sort_push.c
 #SRC_MEDIUM = $(DIR_MEDIUM)
-#SRC_COMPLEX = $(DIR_COMPLEX)
+SRC_COMPLEX = $(DIR_COMPLEX)complex_sort.c
 
 # Junção de todos os arquivos fonte
 SRCS = $(SRC_MAIN) $(SRC_PARSE) $(SRC_STACK) $(SRC_NODE) $(SRC_OPERATIONS) \
        $(SRC_METRICS) $(SRC_SIMPLE) $(SRC_INIT) $(SRC_ERROR) $(SRC_COMMON) \
-	   $(SRC_STRATEGY)
+	   $(SRC_COMPLEX) $(SRC_STRATEGY)
 
 OBJS = $(SRCS:.c=.o)
 
