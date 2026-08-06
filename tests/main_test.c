@@ -19,7 +19,7 @@ static void	test_simple_sort(int *values, int n)
 	push_swap = build_dummy_stack(values, n, NULL, 0);
 	printf("=== ANTES ===\n");
 	print_stack(push_swap->stack_a);
-	simple_sort(push_swap);
+	complex_sort(push_swap);
 	printf("=== DEPOIS ===\n");
 	print_stack(push_swap->stack_a);
 	if (is_sorted(push_swap->stack_a))

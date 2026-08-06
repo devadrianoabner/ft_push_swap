@@ -96,19 +96,22 @@ void			sb(t_push_swap *push_swap);
 void			ss(t_push_swap *push_swap);
 /* --- STACK --- */
 int				stack_size(t_node *stack);
-int				is_empty(t_node *stack);
-t_node			*second_last(t_node *stack);
 int				stack_a_add_back(t_push_swap *push_swap, int value);
 int				is_sorted(t_node *stack);
 t_node			*find_tail(t_node *stack);
 int				get_index(t_node *stack, t_node *node);
+int				get_rank(t_push_swap *push_swap, t_node *node);
 /* --- NODE --- */
 int				node_compare(t_node *src, t_node *dest);
 t_node			*get_node(t_node *stack, int type);
+t_node			*second_last(t_node *stack);
+
 /* --- METRICS --- */
 void			count_op(t_push_swap *push_swap, t_op op);
 /* --- SIMPLE CONTROLLER --- */
 void			simple_sort(t_push_swap *push_swap);
+/* --- COMPLEX CONTROLLER --- */
+void	complex_sort(t_push_swap *push_swap);
 /* --- TEMPORÁRIO: ambiente de testes --- */
 t_push_swap		*build_dummy_stack(int *values_a, int n_a,
 					int *values_b, int n_b);
