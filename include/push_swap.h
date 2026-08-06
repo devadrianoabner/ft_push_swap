@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rafcrist <rafcrist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 13:08:00 by adrianda          #+#    #+#             */
-/*   Updated: 2026/08/01 21:15:44 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/08/06 16:26:42 by rafcrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct s_push_swap
 	t_node		*stack_b;
 	int			op_counts[OP_TYPES_TOTAL];
 	int			bench;
+	double		disorder;
 	t_flag_id	strategy;
 }	t_push_swap;
 
@@ -108,6 +109,8 @@ t_node			*second_last(t_node *stack);
 
 /* --- METRICS --- */
 void			count_op(t_push_swap *push_swap, t_op op);
+double			compute_disorder(t_node *stack);
+void			dispatch_strategy(t_push_swap *push_swap);
 /* --- SIMPLE CONTROLLER --- */
 void			simple_sort(t_push_swap *push_swap);
 /* --- COMPLEX CONTROLLER --- */
