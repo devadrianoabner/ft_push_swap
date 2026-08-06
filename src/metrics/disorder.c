@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   disorder.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rafcrist <rafcrist@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/06 15:53:42 by rafcrist          #+#    #+#             */
+/*   Updated: 2026/08/06 15:53:42 by rafcrist         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 double	compute_disorder(t_node *stack)
 {
-	t_node  *current;
-	t_node  *compare;
-	int     inversions;
-	int     total_pairs;
+	t_node	*current;
+	t_node	*compare;
+	int		inversions;
+	int		total_pairs;
 
 	if (stack == NULL || stack->next == NULL)
 		return (0.0);
