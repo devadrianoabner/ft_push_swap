@@ -36,7 +36,7 @@ SRC_STACK = $(DIR_STACK)stack_build.c $(DIR_STACK)stack_inspect.c \
 SRC_NODE = $(DIR_NODE)node_inspect.c
 SRC_OPERATIONS = $(DIR_OPERATIONS)push.c $(DIR_OPERATIONS)r_reverse.c \
                  $(DIR_OPERATIONS)rotate.c $(DIR_OPERATIONS)swap.c
-SRC_METRICS = $(DIR_METRICS)count_op.c
+SRC_METRICS = $(DIR_METRICS)count_op.c $(DIR_METRICS)disorder.c
 SRC_INIT = $(DIR_INIT)init_push_swap.c
 SRC_ERROR = $(DIR_ERROR)error.c
 SRC_COMMON = $(DIR_COMMON)cost.c $(DIR_COMMON)moves.c $(DIR_COMMON)position.c \

@@ -63,6 +63,7 @@ typedef struct s_push_swap
 	t_node		*stack_b;
 	int			op_counts[OP_TYPES_TOTAL];
 	int			bench;
+	double		disorder;
 	t_flag_id	strategy;
 }	t_push_swap;
 
@@ -107,6 +108,7 @@ int				node_compare(t_node *src, t_node *dest);
 t_node			*get_node(t_node *stack, int type);
 /* --- METRICS --- */
 void			count_op(t_push_swap *push_swap, t_op op);
+double			compute_disorder(t_node *stack);
 /* --- SIMPLE CONTROLLER --- */
 void			simple_sort(t_push_swap *push_swap);
 /* --- TEMPORÁRIO: ambiente de testes --- */

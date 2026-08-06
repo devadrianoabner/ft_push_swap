@@ -19,6 +19,7 @@ void	init_push_swap(t_push_swap *push_swap)
 	push_swap->stack_a = NULL;
 	push_swap->stack_b = NULL;
 	push_swap->bench = 0;
+	push_swap->disorder = 0.0;
 	push_swap->strategy = FLAG_ADAPTIVE;
 	i = 0;
 	while (i < OP_TYPES_TOTAL)
