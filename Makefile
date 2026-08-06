@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+         #
+#    By: rafcrist <rafcrist@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/16 12:37:14 by adrianda          #+#    #+#              #
-#    Updated: 2026/08/01 18:00:46 by adrianda         ###   ########.fr        #
+#    Updated: 2026/08/06 16:24:29 by rafcrist         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ DIR_INIT = src/init/
 DIR_ERROR = src/error/
 DIR_COMMON = src/algorithms/common/
 DIR_SIMPLE = src/algorithms/simple/
+DIR_STRATEGY = src/strategy/
 #DIR_MEDIUM = src/algorithms/medium/
 #DIR_COMPLEX = src/algorithms/complex/
 
@@ -47,7 +48,8 @@ SRC_SIMPLE = $(DIR_SIMPLE)controller.c $(DIR_SIMPLE)sort_push.c
 
 # Junção de todos os arquivos fonte
 SRCS = $(SRC_MAIN) $(SRC_PARSE) $(SRC_STACK) $(SRC_NODE) $(SRC_OPERATIONS) \
-       $(SRC_METRICS) $(SRC_SIMPLE) $(SRC_INIT) $(SRC_ERROR) $(SRC_COMMON)
+       $(SRC_METRICS) $(SRC_SIMPLE) $(SRC_INIT) $(SRC_ERROR) $(SRC_COMMON) \
+	   $(SRC_STRATEGY)
 
 OBJS = $(SRCS:.c=.o)
 
