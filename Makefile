@@ -42,7 +42,7 @@ SRC_INIT = $(DIR_INIT)init_push_swap.c
 SRC_ERROR = $(DIR_ERROR)error.c
 SRC_COMMON = $(DIR_COMMON)cost.c $(DIR_COMMON)moves.c $(DIR_COMMON)position.c \
              $(DIR_COMMON)sort_three.c $(DIR_COMMON)return_to_a.c
-SRC_SIMPLE = $(DIR_SIMPLE)controller.c $(DIR_SIMPLE)sort_push.c
+SRC_SIMPLE = $(DIR_SIMPLE)simple_sort.c $(DIR_SIMPLE)sort_push.c
 #SRC_MEDIUM = $(DIR_MEDIUM)
 SRC_COMPLEX = $(DIR_COMPLEX)complex_sort.c
 
