@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   controller.c                                       :+:      :+:    :+:   */
+/*   simple_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 20:22:35 by adrianda          #+#    #+#             */
-/*   Updated: 2026/08/01 21:36:41 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/08/08 15:20:38 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include "simple.h"
-#include "common.h"
 
 void	greedy_sort(t_push_swap *push_swap)
 {

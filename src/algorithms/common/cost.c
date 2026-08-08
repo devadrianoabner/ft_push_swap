@@ -6,11 +6,10 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 20:21:55 by adrianda          #+#    #+#             */
-/*   Updated: 2026/08/01 21:54:31 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/08/08 15:21:17 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include "common.h"
 
 int	get_single_cost(int size, int index)

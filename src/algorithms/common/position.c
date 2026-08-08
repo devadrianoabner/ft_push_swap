@@ -6,11 +6,10 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 20:22:51 by adrianda          #+#    #+#             */
-/*   Updated: 2026/08/01 20:22:58 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/08/08 15:21:12 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include "common.h"
 
 t_node	*get_target_node(t_node *stack_a, t_node *stack_b)

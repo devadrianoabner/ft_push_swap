@@ -25,10 +25,6 @@ int	stack_size(t_node *stack)
 	return (i);
 }
 
-int	is_empty(t_node *stack)
-{
-	return (stack == NULL);
-}
 
 int	is_sorted(t_node *stack)
 {
@@ -41,6 +37,7 @@ int	is_sorted(t_node *stack)
 	return (0);
 }
 
+
 t_node	*find_tail(t_node *stack)
 {
 	t_node	*tail;
@@ -52,6 +49,8 @@ t_node	*find_tail(t_node *stack)
 	tail = stack;
 	return (tail);
 }
+
+
 int	get_index(t_node *stack, t_node *node)
 {
 	int		index;
@@ -67,4 +66,29 @@ int	get_index(t_node *stack, t_node *node)
 		current = current->next;
 	}
 	return (-1);
+}
+
+int	get_rank(t_push_swap *push_swap, t_node *node)
+{
+	int	rank;
+	t_node *current;
+
+	rank = 0;
+	current = push_swap->stack_a;
+	while (current != NULL)
+	{
+		if (node->value > current->value)
+			rank++;
+		current = current->next;
+	}
+	if (!push_swap->stack_b)
+		return (rank);
+	current = push_swap->stack_b;
+	while (current != NULL)
+	{
+		if (node->value > current->value)
+			rank++;
+		current = current->next;
+	}
+	return (rank);
 }
