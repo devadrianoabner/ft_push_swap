@@ -6,7 +6,7 @@
 /*   By: rafcrist <rafcrist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 16:21:58 by rafcrist          #+#    #+#             */
-/*   Updated: 2026/08/07 20:49:07 by rafcrist         ###   ########.fr       */
+/*   Updated: 2026/08/08 15:29:34 by rafcrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ void	dispatch_strategy(t_push_swap *push_swap)
 		complex_sort(push_swap);
 	}
 	else if (push_swap->strategy == FLAG_ADAPTIVE)
-		adaptative_strategy(push_swap);
+		adaptive_strategy(push_swap);
 }
