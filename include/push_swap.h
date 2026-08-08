@@ -6,7 +6,7 @@
 /*   By: rafcrist <rafcrist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 13:08:00 by adrianda          #+#    #+#             */
-/*   Updated: 2026/08/06 16:26:42 by rafcrist         ###   ########.fr       */
+/*   Updated: 2026/08/07 20:15:42 by rafcrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ typedef struct s_push_swap
 	int			bench;
 	double		disorder;
 	t_flag_id	strategy;
+	t_flag_id	strategy_selected;
 }	t_push_swap;
 
 /* --- PARSER --- */
