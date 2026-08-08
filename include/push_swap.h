@@ -6,7 +6,7 @@
 /*   By: rafcrist <rafcrist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 13:08:00 by adrianda          #+#    #+#             */
-/*   Updated: 2026/08/07 20:15:42 by rafcrist         ###   ########.fr       */
+/*   Updated: 2026/08/07 21:53:33 by rafcrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ t_node			*get_node(t_node *stack, int type);
 void			count_op(t_push_swap *push_swap, t_op op);
 double			compute_disorder(t_node *stack);
 void			dispatch_strategy(t_push_swap *push_swap);
+void			print_op_counts(t_push_swap *push_swap);
 /* --- SIMPLE CONTROLLER --- */
 void			simple_sort(t_push_swap *push_swap);
 /* --- TEMPORÁRIO: ambiente de testes --- */

@@ -6,7 +6,7 @@
 /*   By: rafcrist <rafcrist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 14:27:35 by rafcrist          #+#    #+#             */
-/*   Updated: 2026/08/07 20:59:34 by rafcrist         ###   ########.fr       */
+/*   Updated: 2026/08/07 21:55:41 by rafcrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,8 @@ void	benchmark(t_push_swap *push_swap)
 	write_strategy(push_swap);
 	write_formula(push_swap);
 	ft_putstr_fd("[bench] total_ops: ", 2);
-	ft_putstr_fd(ft_putnbr_fd(), 2);
+	ft_putnbr_fd(total_op(push_swap), 2);
+	ft_putchar_fd('\n', 2);
+	print_op_counts(push_swap);
 }
+
