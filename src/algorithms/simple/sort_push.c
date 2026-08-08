@@ -6,13 +6,11 @@
 /*   By: adrianda <adrianda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 20:22:44 by adrianda          #+#    #+#             */
-/*   Updated: 2026/08/01 21:59:39 by adrianda         ###   ########.fr       */
+/*   Updated: 2026/08/08 15:20:17 by adrianda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include "simple.h"
-#include "common.h"
 
 void	get_cheapest_move(t_push_swap *push_swap, t_move *best_move)
 {
